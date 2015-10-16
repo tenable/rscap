@@ -1,0 +1,78 @@
+#!/bin/sh
+#
+# chkconfig: - 98 34
+# description: Starts and stops the rscap services
+#
+
+
+# Source function library.
+if [ -f /etc/init.d/functions ] ; then
+  . /etc/init.d/functions
+elif [ -f /etc/rc.d/init.d/functions ] ; then
+  . /etc/rc.d/init.d/functions
+else
+  exit 0
+fi
+
+# Avoid using root's TMPDIR
+unset TMPDIR
+
+# Source networking configuration.
+. /etc/sysconfig/network
+
+
+# Check that networking is up.
+[ "${NETWORKING}" = "no" ] && exit 0
+
+
+test -x /opt/rscap/bin/scapcomm -a -x /opt/rscap/bin/scapassess || {
+        echo "rscap not properly installed"
+        exit 1
+        }
+
+RETVAL=0
+
+
+start() {
+        KIND="rscap"
+        echo -n $"Starting $KIND services: "
+        /opt/rscap/bin/scapcomm &
+        /opt/rscap/bin/scapassess &
+        success
+        return 0
+}       
+
+stop() {
+        KIND="rscap"
+        echo -n $"Shutting down $KIND services: "
+	killall scapcomm
+	killall scapassess
+        success
+        return 0
+}       
+
+restart() {
+        stop
+        start
+}       
+
+
+case "$1" in
+  start)
+        start
+        ;;
+  status)
+        status scapcomm 
+        ;;
+  stop)
+        stop
+        ;;
+  restart)
+        restart
+        ;;
+  *)
+        echo $"Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+
+exit $?

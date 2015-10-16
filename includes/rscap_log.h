@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014 Tenable Network Security, Inc.
 All rights reserved.
 
@@ -21,3 +22,9 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+*/
+
+int rscap_log_init(const char * ident);
+int rscap_add_log_fp(FILE * fp);
+int rscap_add_log_file(const char *);
+void rscap_log(char * str, ...);

@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014 Tenable Network Security, Inc.
 All rights reserved.
 
@@ -21,3 +22,20 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+*/
+
+
+struct rscap_string {
+        char * buf;
+        int    buf_sz;
+        int    buf_len;
+};
+
+
+void rscap_string_init(struct rscap_string * str);
+void rscap_string_cat(struct rscap_string * str, const char * data);
+void rscap_string_cat_escape(struct rscap_string * str, const char * data);
+void rscap_string_ncat(struct rscap_string * str, const char * data, int data_len);
+void rscap_string_free(struct rscap_string * str);
+char * rscap_string_cstring(struct rscap_string * str);
+char * rscap_base64_encode(const char *decoded_str, size_t decoded_len, char * result, size_t result_sz);

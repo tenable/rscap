@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014 Tenable Network Security, Inc.
 All rights reserved.
 
@@ -21,3 +22,10 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+*/
+
+
+struct rscap_cmd * rscapcmd_scap_list();
+struct rscap_cmd * rscapcmd_scap_delete(const char * fname);
+struct rscap_cmd * rscap_cmd_scap_profile_list(const char * fname);
+struct rscap_cmd * rscapcmd_cert_replace(struct rscap_hash *, const char * fname);

@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014 Tenable Network Security, Inc.
 All rights reserved.
 
@@ -21,3 +22,22 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+*/
+#ifndef RSCAP_HASH_H__
+#define RSCAP_HASH_H__
+struct rscap_hash_entry {
+	char * key;
+	char * value;
+	struct rscap_hash_entry * next;
+};
+
+struct rscap_hash  {
+	int key_sz;
+	struct rscap_hash_entry ** entries;
+};
+
+struct rscap_hash * rscap_hash_init(int sz);
+void rscap_hash_free(struct rscap_hash * h );
+int rscap_hash_add_value(struct rscap_hash * h, const char * key , const char * value );
+const char * rscap_hash_get_value(const struct rscap_hash * h, const char * key);
+#endif

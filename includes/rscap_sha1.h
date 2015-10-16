@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014 Tenable Network Security, Inc.
 All rights reserved.
 
@@ -21,3 +22,11 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+*/
+#ifndef RSCAP_SHA1_H__
+#define RSCAP_SHA1_H__
+
+int rscap_sha1(const char * dir, const char * fname, char * buf, size_t buf_sz);
+int rscap_sha1_buf(const char * buffer, size_t buffer_size, char * sig, size_t sig_sz);
+
+#endif

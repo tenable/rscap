@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014 Tenable Network Security, Inc.
 All rights reserved.
 
@@ -21,3 +22,16 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+*/
+#include "rscap_alloc.h"
+#include "rscap_stack.h"
+#include "rscap_files.h"
+#include "rscap_strlcpy.h"
+#include "rscap_sys.h"
+#include "rscap_signature.h"
+#include "rscap_log.h"
+#include "rscap_untar.h"
+#include "rscap_sha1.h"
+#include "rscap_string.h"
+#include "rscap_hash.h"
+#include "rscap_cfg.h"

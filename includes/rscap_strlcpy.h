@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014 Tenable Network Security, Inc.
 All rights reserved.
 
@@ -21,3 +22,14 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+*/
+
+#ifndef HAVE_STRLCAT
+size_t strlcat(char * dst, const char* src, size_t dst_max_len);
+#endif
+#ifndef HAVE_STRLCPY 
+size_t strlcpy(char * dst, const char * src, size_t len);
+#endif
+#ifndef HAVE_STRCASECMP
+int strcasecamp(const char * s1, const char * s2 );
+#endif

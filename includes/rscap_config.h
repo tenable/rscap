@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014 Tenable Network Security, Inc.
 All rights reserved.
 
@@ -21,3 +22,21 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+*/
+
+#define RSCAP_QUEUE_DIR "/var/opt/rscap/queue"
+#define RSCAP_RUNNING_DIR "/var/opt/rscap/running"
+#define RSCAP_RESULTS_DIR "/var/opt/rscap/results"
+#define RSCAP_DB_DIR	  "/var/opt/rscap/db"
+#define RSCAP_UPLOAD_DIR  "/var/opt/rscap/upload"
+#define RSCAP_STAGING_DIR  "/var/opt/rscap/staging"
+#define RSCAP_CONFIG_FILE "/opt/rscap/etc/rscap.cfg"
+
+#define RSCAP_REMEDY_QUEUE_DIR "/var/opt/rscap/remediation_queue"
+#define RSCAP_REMEDY_RUNNING_DIR "/var/opt/rscap/remediation_running"
+#define RSCAP_REMEDY_DB_DIR	  "/var/opt/rscap/remediation_db"
+#define RSCAP_REMEDY_RESULTS_DIR "/var/opt/rscap/remediation_results"
+
+#define RSCAP_HTML_ROOT	"/var/opt/rscap/debug"
+
+#define RSCAP_VERSION "0.0.1"

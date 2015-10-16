@@ -1,0 +1,33 @@
+
+
+<h1>1.5.1: File Manipulation</h1>
+<ul>
+ <li>1.5.1.1 <b>/scap/list</b>: <a href="/scap/list" target="_top">[Click here]</a>
+ <li>1.5.1.2 <b>/scap/profile/list</b>: <form action="/scap/profile/list" method="GET"><input name="scapfile" type="entry" width="80" /><input type="submit" value="[Click here]"></form>
+ <li>1.5.1.3 <b>/scap/upload</b><form action="/scap/upload" method="POST" enctype="multipart/form-data"><input type="file" name="file" id="file"><input type="submit" value="[Click here]"></form>
+ <li>1.5.1.4 <b>/scap/delete</b>  <form action="/scap/delete" method="GET"><input name="scapfile" type="entry" width="80" /><input type="submit" value="[Click here]"></form>
+</ul>
+<h1>1.5.2: Execution of SCAP Profiles</h1>
+<ul>
+ <li>1.5.2.1 <b>/scap/queue</b>: <a href="/scap/queue" target="_top">[Click here]</a>
+ <li>1.5.2.2 <b>/scap/queue/add</b>: <form action="/scap/queue/add" method="GET">scap file:<input name="scapfile" type="entry" width="80" /> profile:<input name="profile" type="entry" width="80"/><input type="submit" value="[Click here]"/></form>
+ <li>1.5.2.3 <b>/scap/queue/remove</b>: <form action="/scap/queue/remove" method="GET">uuid:<input name="uuid" type="entry" width="80" /><input type="submit" value="[Click here]"/></form>
+</ul>
+<h1>1.5.3: SCAP Results</h1>
+<ul>
+ <li>1.5.3.1 <b>/scap/results/list</b>: <a href="/scap/results/list" target="_top">[Click here]</a>
+ <li>1.5.3.2 <b>/scap/results/download</b>: <form action="/scap/results/download" method="GET">uuid:<input name="uuid" type="entry" width="80" /><input type="submit" value="[Click here]"/></form>
+ <li>1.5.3.3 <b>/scap/results/delete</b>: <form action="/scap/results/delete" method="GET">uuid:<input name="uuid" type="entry" width="80" /><input type="submit" value="[Click here]"/></form>
+</ul>
+
+<h1>X.X.Y: Remediation</h1>
+ <li>x.y.z.t <b>/remediation/upload</b><form action="/remediation/upload" method="POST" enctype="multipart/form-data"><input type="file" name="file" id="file"><input type="submit" value="[Click here]"></form>
+ <li>x.y.z.t <b>/remediation/list</b>: <a href="/remediation/list" target="_top">[Click here]</a>
+ <li>x.y.z.t <b>/remediation/delete</b>  <form action="/remediation/delete" method="GET"><input name="remediationfile" type="entry" width="80" /><input type="submit" value="[Click here]"></form>
+ <li>x.y.z.t <b>/remediation/queue</b>: <a href="/remediation/queue" target="_top">[Click here]</a>
+ <li>1.5.2.3 <b>/remediation/queue/remove</b>: <form action="/remediation/queue/remove" method="GET">uuid:<input name="uuid" type="entry" width="80" /><input type="submit" value="[Click here]"/></form>
+ <li>x.y.z.t <b>/remediation/queue/add</b>  <form action="/remediation/queue/add" method="GET"><input name="remediationfile" type="entry" width="80" /><input type="submit" value="[Click here]"></form>
+ <li>x.y.z.t <b>/remediation/results/list</b>: <a href="/remediation/results/list" target="_top">[Click here]</a>
+ <li>x.y.z.t <b>/remediation/results/download</b>: <form action="/remediation/results/download" method="GET">uuid:<input name="uuid" type="entry" width="80" /><input type="submit" value="[Click here]"/></form>
+ <li>x.y.z.t <b>/remediation/results/delete</b>: <form action="/remediation/results/delete" method="GET">uuid:<input name="uuid" type="entry" width="80" /><input type="submit" value="[Click here]"/></form>
+

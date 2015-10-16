@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014 Tenable Network Security, Inc.
 All rights reserved.
 
@@ -20,4 +21,20 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
 ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*/
+
+
+int rscap_file_readable(const char * path);
+struct rscap_stack * rscap_dir_contents(const char * path);
+char * rscap_mk_path(const char * dir, ...);
+int rscap_rename(const char * src, const char * dst);
+int rscap_rmdir(const char * path);
+int rscap_recursive_rmdir(const char * path);
+int rscap_chown_dir(const char * path, const char * user, const char * group);
+int rscap_rename_dir(const char * src, const char * dst);
+int rscap_unlink(const char * path);
+int rscap_write_file_contents(const char * path, const char * contents, size_t sz );
+int rscap_read_file_contents(const char * path, char ** contents, size_t * sz );
+int rscap_copy_file(const char * src, const char * dst);
 

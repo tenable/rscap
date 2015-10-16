@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014 Tenable Network Security, Inc.
 All rights reserved.
 
@@ -21,3 +22,10 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+*/
+
+
+int rscap_untar(const char * archive, const char * destdir, struct rscap_hash * signatures, int verifyOnly);
+int rscap_tar_find_xccdf_file(const char * archive, char * out_fname, size_t out_fname_sz);
+int rscap_tar_get_file(const char * archive, const char * search_fname, char ** out_buf, size_t * out_buf_sz );
+int rscap_tar_check_header(const char * archive);

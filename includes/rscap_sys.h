@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014 Tenable Network Security, Inc.
 All rights reserved.
 
@@ -21,3 +22,15 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+*/
+
+void rscap_sleep(int s);
+time_t rscap_time();
+int rscap_ctime(time_t t, char * str, size_t str_sz);
+pid_t rscap_getpid();
+const char * rscap_strerror();
+char * rscap_chomp(char * in);
+int rscap_validate_uuid(const char * uuid);
+int rscap_uuid(char * buf, int buf_sz );
+int rscap_uid_byname(const char * username);
+int rscap_gid_byname(const char * groupname);

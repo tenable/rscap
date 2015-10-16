@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014 Tenable Network Security, Inc.
 All rights reserved.
 
@@ -20,4 +21,38 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
 ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*/
+#include <rscap_includes.h>
+#include <rscap_common.h>
+#include <openssl/ssl.h>
+
+#include "rscap_cmd.h"
+#include "rscap_cmd_queue.h"
+#include "rscap_cmd_scap.h"
+#include "rscap_cmd_results.h"
+#include "rscap_cmd_remediation.h"
+
+
+int rscap_base64_decode(const char * b64message, char ** buffer)
+{
+
+  BIO *bio, *b64;
+  int decodeLen = strlen(b64message) + 1;
+  FILE* stream = fmemopen(b64message, strlen(b64message), "r");
+  int len;
+
+  len = 0;
+  *buffer = (char*)malloc(decodeLen+1);
+ 
+  b64 = BIO_new(BIO_f_base64());
+  bio = BIO_new_fp(stream, BIO_NOCLOSE);
+  bio = BIO_push(b64, bio);
+  BIO_set_flags(bio, BIO_FLAGS_BASE64_NO_NL); //Do not use newlines to flush buffer
+  len = BIO_read(bio, *buffer, strlen(b64message));
+  (*buffer)[len] = '\0';
+  BIO_free_all(bio);
+  fclose(stream);
+  return (0); //success
+}
 
